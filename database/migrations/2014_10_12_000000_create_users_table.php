@@ -48,16 +48,17 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('car_id');
-            $table->String('car_brand');
-            $table->String('idname');
+            $table->String('start');
+            $table->String('end');
             $table->String('fname');
             $table->String('lname');
+            $table->String('status')->default(0);
+
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('car_id')->references('id')->on('cars');
         });
 
-        
     }
 
     /**

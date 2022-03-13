@@ -18,14 +18,14 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="/../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="/../assets/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <body>
@@ -95,48 +95,76 @@
             <div class="section-header">
                 <h3 class="section-title">Car Rental</h3><br>
             </div>
-
-            <center>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        ประเภทรถเช่า
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="#">Honda</a></li>
-                        <li><a class="dropdown-item" href="#">Mazda</a></li>
-                        <li><a class="dropdown-item" href="#">Nissan</a></li>
-                        <li><a class="dropdown-item" href="#">Mazda</a></li>
-                        <li><a class="dropdown-item" href="#">Mercedes-Benz</a></li>
-                        <li><a class="dropdown-item" href="#">BMW</a></li>
-                    </ul>
+            @if (session('success'))
+                <div class="alert alert-success" role="alert">
+                    บันทึกข้อมูลเรียบร้อย
                 </div>
-            </center>
-            <br>
+            @endif
+            <div class="container">
 
-            <d class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                <form action="{{ route('addcar2') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+
+                    <div class="row">
 
 
-                @foreach ($car as $item)
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-Honda">
-                        <img src="{{ url($item->car_image) }}" class="img-fluid" alt="" width="100%"
-                            height="100%">
-                        <div class="portfolio-info">
+                        <div class="col-6">
 
-                            <center>
-                                <a href="{{ url('/bookinguser/' . $item->id) }} " class="btn btn-success ">จอง</a>
+                            <input type="hidden" class="form-control" name="car_id" value="{{ $book->id }}">
 
-                            </center>
+
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">ชื่อ</label>
+                                <input type="text" class="form-control" name="fname">
+                            </div>
+
 
                         </div>
+
+                        <div class="col-6">
+
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">นามสกุล</label>
+                                <input type="text" class="form-control " name="lname">
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="col-6">
+
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">เวลาเริ่มต้น</label>
+                                <input type="text" class="form-control" name="start">
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="col-6">
+
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">เวลาสิ้นสุด</label>
+                                <input type="text" class="form-control" name="end">
+                            </div>
+
+
+                        </div>
+                        <button type="submit" class="btn btn-success"> บันทึกรายการ</button>
                     </div>
-                @endforeach
+                </form>
+            </div>
+
 
 
 
         </div>
 
+
         </div>
+
     </section><!-- End Portfolio Section -->
     <!-- ======= Footer ======= -->
     <footer id="footer">
@@ -157,16 +185,16 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="assets/vendor/purecounter/purecounter.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="/../assets/vendor/purecounter/purecounter.js"></script>
+    <script src="/../assets/vendor/aos/aos.js"></script>
+    <script src="/../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/../assets/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="/../assets/js/main.js"></script>
 
 </body>
 

@@ -4,6 +4,7 @@ use App\Http\Controllers\addcarController;
 use App\Http\Controllers\bookingcarController;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\register;
+use App\Models\car;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,8 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', function () {
-    return view('welcome');
+    $car = car::all();
+    return view('welcome', compact('car'));
 });
 
 Route::get('/registers', [register::class, 'index'])->name('Register');
@@ -31,7 +33,13 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::post('/addcar/add', [addcarController::class, 'store'])->name('storecar');
     Route::get('/addcar/delete/{id}', [addcarController::class, 'delete']);
     Route::get('/addcar/edit/{id}', [addcarController::class, 'edit'])->name('editcar');
+
     Route::post('/addcar/update/{id}', [addcarController::class, 'update']);
+
     Route::get('/booking', [bookingcarController::class, 'index'])->name('booking');
+    Route::get('/bookinguser/{id}', [bookingcarController::class, 'index2'])->name('booking2');
+    Route::post('/addbookinguser', [bookingcarController::class, 'store'])->name('addcar2');
+
+    Route::post('/addbookinguser/update/{id}', [bookingcarController::class, 'update']);
 
 });

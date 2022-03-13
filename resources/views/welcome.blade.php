@@ -128,128 +128,57 @@
             <br>
 
             <d class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Honda">
-                    <img src="assets/img/portfolio/Honda/5.jpg" class="img-fluid" alt="" width="100%"
-                        height="100%">
-                    <div class="portfolio-info">
-                        <a href="hondacivic.html">
-                            <center><button class="button button4">Select</button></center>
-                        </a>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Honda" width="100%" height="100%">
-                    <img src="assets/img/portfolio/Honda/6.jpg" class="img-fluid" alt="" width="100%"
-                        height="100%">
-                    <div class="portfolio-info">
-                        <a href="hondajazz.html">
-                            <center><button class="button button4">Select</button></center>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Honda">
-                    <img src="assets/img/portfolio/Honda/7.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <a href="hondaaccord.html">
-                            <center><button class="button button4">Select</button></center>
-                    </div>
-                </div>
+                @foreach ($car as $item)
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-Honda">
+                        <img src="{{ url($item->car_image) }}" class="img-fluid" alt="" width="100%"
+                            height="100%">
+                        <div class="portfolio-info">
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Mazda">
-                    <img src="assets/img/portfolio/Mazda/2.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <a href="mazda3sedan.html">
-                            <center><button class="button button4">Select</button></center>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Mazda">
-                    <img src="assets/img/portfolio/Mazda/3.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <a href="mazda2.1.html">
-                            <center><button class="button button4">Select</button></center>
-                    </div>
-                </div>
+                            <!-- Button trigger modal -->
+                            <center> <button type="button" class="button button4" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    Select
+                                </button></center>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Mazda">
-                    <img src="assets/img/portfolio/Mazda/4.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <a href="mazda2.html">
-                            <center><button class="button button4">Select</button></center>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Nissan">
-                    <img src="assets/img/portfolio/Nissan/2.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <a href="nissanmarch.html">
-                            <center><button class="button button4">Select</button></center>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                @endforeach
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Nissan">
-                    <img src="assets/img/portfolio/Nissan/3.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <a href="nissanleaf.html">
-                            <center><button class="button button4">Select</button></center>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Nissan">
-                    <img src="assets/img/portfolio/Nissan/4.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <a href="nissanalmera.html">
-                            <center><button class="button button4">Select</button></center>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Mercedes-Benz">
-                    <img src="assets/img/portfolio/Mercedes-Benz/1.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <a href="Mercedes-Benz A.html">
-                            <center><button class="button button4">Select</button></center>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Mercedes-Benz">
-                    <img src="assets/img/portfolio/Mercedes-Benz/3.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <a href="Mercedes-Benz AMG.html">
-                            <center><button class="button button4">Select</button></center>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Mercedes-Benz">
-                    <img src="assets/img/portfolio/Mercedes-Benz/2.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <a href="Mercedes-Benz C.html">
-                            <center><button class="button button4">Select</button></center>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-BMW">
-                    <img src="assets/img/portfolio/BMW/2.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <a href="BMW M8.html">
-                            <center><button class="button button4">Select</button></center>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-BMW">
-                    <img src="assets/img/portfolio/BMW/3.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <a href="BMW Series 5.html">
-                            <center><button class="button button4">Select</button></center>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-BMW">
-                    <img src="assets/img/portfolio/BMW/4.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                        <a href="BMW Series 3.html">
-                            <center><button class="button button4">Select</button></center>
-                    </div>
-                </div>
+
+
+
         </div>
 
         </div>

@@ -11,8 +11,10 @@ class bookingcar extends Model
     protected $fillable = [
         'user_id',
         'car_id',
-        'car_brand',
-        'idname',
+
+        'start',
+        'end',
+        'status',
         'fname',
         'lname',
     ];
